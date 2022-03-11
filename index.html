@@ -1,14 +1,4 @@
 <!DOCTYPE html>
-<form action="/action_page.php">
-  <label for="Date">Choose What Day:</label>
-  <input type="date" id="date" name="Date">
-  <input type="choose">
-</form>
-<form action="/action_page.php">
-  <label for="appt">Select a time:</label>
-  <input type="time" id="appt" name="appt">
-  <input type="submit">
-</form>
 <html>
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -121,8 +111,105 @@ span.price {
 </head>
 <body>
 
-<h2>Responsive Checkout Form</h2>
-<p>Resize the browser window to see the effect. When the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other.</p>
+<h2>Bus Reservation</h2>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+#myDIV {
+  width: 100%;
+  padding: 20px 0;
+  text-align: center;
+  background-color: rgb(100, 103, 253);
+  margin-top: 10px;
+}
+#erDIV {
+  width: 100%;
+  padding: 20px 0;
+  text-align: center;
+  background-color: rgb(250, 246, 21);
+  margin-top: 10px;
+}
+</style>
+</head>
+<body>
+
+<p><b>Date:</b> Choose the Date in Which you want to leave - Note: Busses Run only on Saturdays and Sundays at this time</p>
+<p><b>Time:</b> Choose the Time in Which you want to leave - Note: Busses return 6 hours after departure</p>
+<p><b>Info:</b> Enter your Info - Note: The pickup location will be chosen by Wednesday March the 16th to Optimize the distance between you and the pickup/dropoff location</p>
+</body>
+<style>
+.btn-group button {
+  background-color: #5904f5; /* Green background */
+  border: 1px solid rgb(28, 4, 241); /* Green border */
+  color: white; /* White text */
+  padding: 10px 24px; /* Some padding */
+  cursor: pointer; /* Pointer/hand icon */
+  width: 50%; /* Set a width if needed */
+  display: block; /* Make the buttons appear below each other */
+}
+
+.btn-group button:not(:last-child) {
+  border-bottom: none; /* Prevent double borders */
+}
+
+/* Add a background color on hover */
+.btn-group button:hover {
+  background-color: #0b07f3;
+}
+</style>
+<body>
+  <p style="width:200px;">
+</p>
+<div class="btn-group">
+  <button onclick="myFunction()">Choose Date</button>
+  <button onclick="myFunction2()">Choose Time</button>
+  <button onclick="myFunction3()">Enter Info</button>
+</div>
+</form>
+<div id="myDIV">
+  <form action="/action_page.php">
+    <label for="Date">Choose What Day:</label>
+    <input type="date" id="date" name="Date">
+    <input type="choose">
+</div>
+<div id="erDIV">
+  <label for="appt">Choose Pickup Time:</label>
+
+<input type="time" id="appt" name="appt"
+       min="09:00" max="9:0" required>
+
+<small>Busses run every half an hour between 9:00 AM to 10:00 PM</small>
+  </div>
+    <div id="wsDIV">
+      <form action="/action_page.php">
+<script>
+function myFunction() {
+  var x = document.getElementById("myDIV");
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
+}
+  function myFunction2() {
+    var x = document.getElementById("erDIV");
+    if (x.style.display === "none") {
+      x.style.display = "block";
+    } else {
+      x.style.display = "none";
+    }
+  }
+  function myFunction3() {
+    var x = document.getElementById("wsDIV");
+    if (x.style.display === "none") {
+      x.style.display = "block";
+    } else {
+      x.style.display = "none";
+    }
+  }
+  </script>
+<div></div>
 <div class="row">
   <div class="col-75">
     <div class="container">
@@ -182,7 +269,7 @@ span.price {
         </div>
         <label>
         </label>
-        <input type="submit" value="Continue to checkout" class="btn">
+        <input type="submit" value="Book Reservation" class="btn">
       </form>
     </div>
   </div>
